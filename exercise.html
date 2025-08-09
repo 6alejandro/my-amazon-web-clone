@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert("Good Morning! Tegas");
+
+      const tshirt = 10;
+      const shocks = 8;
+      const dinnerPlate = 20;
+
+      const total = tshirt + shocks + dinnerPlate;
+
+      let html = "<div>Good Morning! Tegas</div>";
+
+      html += `
+        <div>Total: $${total}</div>
+      `;
+
+      let bankAccount = 100;
+      const lunch = 20;
+      const dinner = 50;
+      const salary = 200;
+
+      bankAccount = bankAccount - lunch - dinner + salary;
+
+      html += `
+      <div>Bank: $${bankAccount}</div>
+      `;
+
+      document.body.innerHTML = html;
+      console.log(html);
+
+      document.body.innerHTML = "";
+    </script>
+  </body>
+</html>
