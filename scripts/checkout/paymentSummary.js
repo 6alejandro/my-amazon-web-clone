@@ -7,6 +7,7 @@ import { addOrder } from '../../data/orders.js';
 export function renderPaymentSummary() {
 let productPriceCents = 0;
 let shippingPriceCents = 0;
+let totalItems = 0;
 
     cart.forEach((cartItem) => {
         const product = getProduct(cartItem.productId)
@@ -14,6 +15,8 @@ let shippingPriceCents = 0;
         
         const deliverOption = getDeliveryOption(cartItem.deliveryOptionId);
         shippingPriceCents += deliverOption.priceCents
+
+        totalItems += cartItem.quantity
     });
 
     console.log(productPriceCents);
@@ -28,7 +31,7 @@ let shippingPriceCents = 0;
     <div class="payment-summary-title">Order Summary</div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${totalItems}):</div>
             <div class="payment-summary-money">$${formatCurrency(productPriceCents)}</div>
           </div>
 
